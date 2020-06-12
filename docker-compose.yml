@@ -1,0 +1,61 @@
+version: "3.7"
+
+services:
+
+  database:
+    image: library/postgres:12.3
+    env_file:
+      - pgadmin-env.list
+    volumes:
+    - database-data:/var/lib/postgressql/data
+    restart: always
+    ports:
+      - "5432:5432"
+    secrets:
+      - POSTGRES_PWD
+
+  pgadmin:
+    image: dpage/pgadmin4:4.18
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: jfraeys@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: /run/secrets/pgadmin_pwd
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    #links:
+    #  - "db:bread-ai_server"
+    secrets:
+      - PGADMIN_PWD
+
+  flask:
+    build: ./flask
+    container_name: flask
+    restart: always
+    depends_on:
+      - database
+    environment:
+      - APP_NAME=bread-ai
+    expose:
+      - 8080
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+    - "80:80"
+
+secrets:
+  POSTGRES_PWD:
+    file: ./devsecrets/postgres_pwd
+    name: POSTGRES_PWD
+  PGADMIN_PWD:
+    file: ./devsecrets/pgadmin_pwd
+    name: PGADMIN_PWD
+
+volumes:
+  database-data:
+  pgadmin-data:

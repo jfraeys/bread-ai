@@ -1,0 +1,5 @@
+#database environment variable
+POSTGRES_USER=jeremiefraeys
+POSTGRES_PASSWORD=/run/secrets/postgres_pwd
+POSTGRES_DB=breaddb
+PGDATA=/var/lib/postgresql/data
