@@ -9,7 +9,7 @@ COPY ./app /app
 COPY environment.yml .
 RUN conda env create -f environment.yml
 
-SHELL ["conda", "run", "-n", "flask-env", "/bin/bash/, \"-c"]
+SHELL ["conda", "run", "-n", "bread-ai_env", "/bin/bash/, \"-c"]
 
 COPY run.py .
-ENTRYPOINT ["conda", "run", "-n", "flask-env", "python", "run.py"]
+ENTRYPOINT ["conda", "run", "-n", "bread-ai_env", "python", "run.py"]
