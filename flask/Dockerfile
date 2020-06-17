@@ -11,5 +11,5 @@ RUN conda env create -f environment.yml
 
 SHELL ["conda", "run", "-n", "bread-ai_env", "/bin/bash/, \"-c"]
 
-COPY run.py .
+COPY app/run.py .
 ENTRYPOINT ["conda", "run", "-n", "bread-ai_env", "python", "run.py"]
