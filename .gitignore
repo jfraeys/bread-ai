@@ -1,4 +1,5 @@
-.DS_Store
-note.txt
 devsecrets/
+.DS_Store
+.idea
+note.txt
 
