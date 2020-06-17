@@ -1,0 +1,11 @@
+alg.
+    https://mobidev.biz/blog/machine-learning-methods-demand-forecasting-retail
+    - SARIMA
+    - ARIMA
+    - Exponential Smoothing
+
+    https://www.relexsolutions.com/resources/machine-learning-in-retail-demand-forecasting/
+
+    https://www.intellias.com/forecasting-demand-and-sales-in-fashion-retail-bet-on-data-not-fortune/
+
+    https://medium.com/bcggamma/the-complex-challenge-of-demand-forecasting-for-business-cfb50a269a41
