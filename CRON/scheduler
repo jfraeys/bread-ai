@@ -1,0 +1,8 @@
+*/1 * * * * python3 /bin/weather_hist.py & python3 /bin/weather_pred.py
+
+# * min (0-59)
+# * hour (0-23)
+# * day (1-31)
+# * month (1-12)
+# * weekday (0-6)
+
