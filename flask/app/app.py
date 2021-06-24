@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<b>There was a change here1</b>"
+    return "<b>There was a change here</b>"
 
 @app.route("/template")
 def template():

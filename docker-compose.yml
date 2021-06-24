@@ -28,6 +28,14 @@ services:
     secrets:
       - PGADMIN_PWD
 
+  cron:
+    image: docker-cron
+    restart: always
+    build: ./CRON
+    volumes:
+      - ./crontab:/var/spool/cron/crontabs/root
+      - ./weather_data:/var/lib/docker/volumes/weather_data/_data
+
   flask:
     build: ./flask
     container_name: flask

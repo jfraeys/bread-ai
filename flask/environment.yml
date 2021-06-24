@@ -1,4 +1,4 @@
-name: bread-ai_env
+name: bread-ai_flask
 dependencies:
  - python=3.7.3
  - requests

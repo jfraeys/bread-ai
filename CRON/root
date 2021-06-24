@@ -1,4 +1,4 @@
-*/1 * * * * python3 /bin/weather_hist.py & python3 /bin/weather_pred.py
+*/1 * * * * python3 weather_hist.py & python3 weather_pred.py
 
 # * min (0-59)
 # * hour (0-23)
